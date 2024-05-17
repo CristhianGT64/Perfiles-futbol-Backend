@@ -1,5 +1,7 @@
 package hn.perfiles.futbol.perfilfutbol.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,11 @@ public class UsuarioServiceImpl implements UsuarioService{
 
         usuario.setEstado(1);
         return this.usuarioRepositorie.save(usuario);
+    }
+
+    @Override
+    public List<Usuario> traerTodosUsuario() {
+        return (List<Usuario>) this.usuarioRepositorie.findAll();
     }
     
 }
